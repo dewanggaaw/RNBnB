@@ -1,5 +1,7 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {View, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import Navigation from './src/Shared/Router/Navigation';
 
 // redux
 import {Provider} from 'react-redux';
@@ -10,9 +12,9 @@ export default function App() {
   return (
     <Provider store={Store}>
       <PersistGate persistor={Persistor}>
-        <View>
-          <Text>Halo RNBnB</Text>
-        </View>
+        <NavigationContainer>
+          <Navigation />
+        </NavigationContainer>
       </PersistGate>
     </Provider>
   );
